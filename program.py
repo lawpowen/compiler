@@ -68,32 +68,33 @@ for line in code.split("\n"):  # 处理每一行
         if skip:
             skip = False
             continue
-        if func.isint(letter):
+        if isint(letter):
             digit = not bool(word)  # word空，当前读到数字
             word += letter
             continue
         elif str.isalpha(letter):
             if digit:
-                func.output(word)
+                output(word)
                 word = ""
                 digit = False
             word += letter
             continue
         else:
             if word:
-                func.output(word)
+                output(word)
                 word = ""
                 digit = False
             if letter in blank:
                 continue
-            if index != len(line) - 1 and func.serial_of_words(line[index:index + 2]):
-                func.output(line[index:index + 2])
+            if index != len(line) - 1 and serial_of_words(line[index:index + 2]):
+                output(line[index:index + 2])
                 skip = True
             else:
-                if not func.serial_of_words(letter):
+                if not serial_of_words(letter):
                     print("Unknown")
                     exit(0)
-                func.output(letter)
+                output(letter)
             word = ""
     if word != "":
-        func.output(word)
+        output(word)
+f.close()
