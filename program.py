@@ -18,7 +18,7 @@ def serial_of_words(_str):
     elif ident(_str):
         return "Ident(" + _str + ")"
     elif str.isdigit(_str):
-        return "Int(" + _str + ")"
+        return "Int(" + str(int(_str)) + ")"
     elif _str == ":":
         return "Colon"
     elif _str == "+":
