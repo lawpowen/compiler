@@ -1,5 +1,6 @@
 import func
 import re
+import sys
 
 
 def serial_of_words(str):
@@ -56,7 +57,7 @@ def output(_str):
     print(serial_of_words(_str))
 
 
-f = open('/tests/1.in', 'r')
+f = open(sys.argv[1], 'r')
 code = f.read()  # 读入文件
 blank = " \n\r\t"
 
