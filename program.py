@@ -1,4 +1,3 @@
-import func
 import re
 import sys
 
