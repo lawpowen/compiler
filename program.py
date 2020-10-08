@@ -2,51 +2,44 @@ import re
 import sys
 
 
-def serial_of_words(str):
-    if str == "BEGIN":
+def serial_of_words(_str):
+    if _str == "BEGIN":
         return "Begin"
-    elif str == "END":
+    elif _str == "END":
         return "End"
-    elif str == "FOR":
+    elif _str == "FOR":
         return "For"
-    elif str == "IF":
+    elif _str == "IF":
         return "If"
-    elif str == "THEN":
+    elif _str == "THEN":
         return "Then"
-    elif str == "ELSE":
+    elif _str == "ELSE":
         return "Else"
-    elif ident(str):
-        return "Ident(" + str + ")"
-    elif isint(str):
-        return "Int(" + str + ")"
-    elif str == ":":
+    elif ident(_str):
+        return "Ident(" + _str + ")"
+    elif str.isdigit(_str):
+        return "Int(" + _str + ")"
+    elif _str == ":":
         return "Colon"
-    elif str == "+":
+    elif _str == "+":
         return "Plus"
-    elif str == "*":
+    elif _str == "*":
         return "Star"
-    elif str == ",":
+    elif _str == ",":
         return "Comma"
-    elif str == "(":
+    elif _str == "(":
         return "LParenthesis"
-    elif str == ")":
+    elif _str == ")":
         return "RParenthesis"
-    elif str == ":=":
+    elif _str == ":=":
         return "Assign"
     else:
         return False
 
 
-def ident(str):  # 正则表达标识符
+def ident(_str):  # 正则表达标识符
     pattern = re.compile(r'([a-zA-Z]+)(\d*)')
-    if re.match(pattern, str, 0):
-        return True
-    else:
-        return False
-
-
-def isint(str):
-    if str.isdigit(str):
+    if re.match(pattern, _str, 0):
         return True
     else:
         return False
@@ -68,7 +61,7 @@ for line in code.split("\n"):  # 处理每一行
         if skip:
             skip = False
             continue
-        if isint(letter):
+        if str.isdigit(letter):
             digit = not bool(word)  # word空，当前读到数字
             word += letter
             continue
