@@ -128,4 +128,8 @@ public class Tokenizer {
             it.nextChar();
         }
     }
+
+    public static void main(String[] argv){
+        System.
+    }
 }
