@@ -41,7 +41,8 @@ int main(int argc, char **argv)
                 if (last_ch == ')')
                 {
                     int here;
-                    for (int i = now; i >= 0; i--)
+                    int i; 
+                    for (i = now; i >= 0; i--)
                     {
                         if (stack[i] == '(')
                         {
@@ -50,7 +51,7 @@ int main(int argc, char **argv)
                         }
                     }
                     int strl = strlen(stack);
-                    for (int i = here; i < strl; i++)
+                    for (i = here; i < strl; i++)
                     {
                         stack[i] = stack[i + 1];
                     }
@@ -70,7 +71,8 @@ int main(int argc, char **argv)
                 if (last_ch == ')')
                 {
                     int here;
-                    for (int i = now; i >= 0; i--)
+                    int i;
+                    for (i = now; i >= 0; i--)
                     {
                         if (stack[i] == '(')
                         {
@@ -79,7 +81,7 @@ int main(int argc, char **argv)
                         }
                     }
                     int strl = strlen(stack);
-                    for (int i = here; i < strl; i++)
+                    for (i = here; i < strl; i++)
                     {
                         stack[i] = stack[i + 1];
                     }
@@ -118,7 +120,8 @@ int main(int argc, char **argv)
                 if (last_ch == ')')
                 {
                     int here;
-                    for (int i = now; i >= 0; i--)
+                    int i;
+                    for (i = now; i >= 0; i--)
                     {
                         if (stack[i] == '(')
                         {
@@ -127,7 +130,7 @@ int main(int argc, char **argv)
                         }
                     }
                     int strl = strlen(stack);
-                    for (int i = here; i < strl; i++)
+                    for (i = here; i < strl; i++)
                     {
                         stack[i] = stack[i + 1];
                     }
@@ -144,7 +147,8 @@ int main(int argc, char **argv)
     if (last_ch == ')')
     {
         int here;
-        for (int i = now; i >= 0; i--)
+        int i;
+        for (i = now; i >= 0; i--)
         {
             if (stack[i] == '(')
             {
@@ -153,7 +157,7 @@ int main(int argc, char **argv)
             }
         }
         int strl = strlen(stack);
-        for (int i = here; i < strl; i++)
+        for (i = here; i < strl; i++)
         {
             stack[i] = stack[i + 1];
         }
@@ -164,7 +168,8 @@ int main(int argc, char **argv)
         printf("RE\n");
         return 0;
     }
-    for (int i = now - 1; i >= 0; i--)
+    int i;
+    for (i = now - 1; i >= 0; i--)
     {
         if (stack[i] == '(')
         {
