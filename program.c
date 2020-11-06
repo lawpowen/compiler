@@ -9,14 +9,19 @@ int now = 0, op_count = 0;
 
 int main(int argc, char **argv)
 {
-    fp = fopen(argv[1], "r");
+    fp = fopen( argv[1] /*"1.in"*/, "r");
     if (fp == NULL)
         exit(0);
+//    char c[10]="i+i*i*";
+//    int ccc=0;
     ch = fgetc(fp);
+//    ch = c[0];
     stack[now++] = ch;
     printf("I%c\n", ch);
     while ((ch = fgetc(fp)) != EOF)
+//    while (ch != '\0')
     {
+//        ch = c[++ccc];
         if (isspace(ch) || ch == '\t')
             continue;
         last_ch = stack[now - 1];
@@ -41,7 +46,7 @@ int main(int argc, char **argv)
                 if (last_ch == ')')
                 {
                     int here;
-                    int i; 
+                    int i;
                     for (i = now; i >= 0; i--)
                     {
                         if (stack[i] == '(')
